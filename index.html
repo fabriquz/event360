@@ -2762,6 +2762,41 @@ select.s95:focus,.s95m>summary:focus,.cb95>input:focus{outline:2px solid var(--t
 .m2-sd[open]>summary{border-bottom:1px solid rgba(120,140,170,.18);margin-bottom:6px}
 .m2-sd .m2-sn{width:20px;height:20px;font-size:.7rem;flex:none}
 .m2-sd .m2-now{font-size:.74rem}.m2-sd .m2-end{font-size:.72rem}
+
+/* v101 · Web sitesi: kompakt + açılır-kapanır + cam (saydam) + ikon ön planda */
+.ws{background:radial-gradient(900px 420px at 88% -4%,rgba(96,165,250,.22),transparent 60%),radial-gradient(700px 420px at 4% 55%,rgba(125,211,252,.22),transparent 60%),linear-gradient(180deg,#fff 0%,#eef6fd 55%,#e6f1fb 100%);background-attachment:fixed}
+.ws .ws-head{background:rgba(255,255,255,.62)!important;-webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);border-bottom:1px solid rgba(255,255,255,.8)!important;box-shadow:0 4px 18px rgba(30,70,130,.07)}
+.ws .gw-hero,.ws .gc-hero{background:none!important;border-bottom:0!important;padding:10px 0 4px!important}
+.ws .gx-cc,.ws .gx-ev,.ws .gx-nw,.ws .gc-ec,.ws .gc-rs,.ws .gx-st>div,.ws .gc-qa a,.ws .gx-tabs,.ws .gc-nx{background:rgba(255,255,255,.55)!important;-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);border:1px solid rgba(255,255,255,.8)!important;box-shadow:0 4px 16px rgba(30,70,130,.08),inset 0 1px 0 rgba(255,255,255,.85)!important}
+.ws .gx-cc.on,.ws .gx-cc.live{border-color:rgba(31,111,197,.45)!important;background:rgba(255,255,255,.72)!important}
+.ws .gx-cc:hover,.ws .gx-ev:hover,.ws .gx-nw:hover,.ws .gc-ec:hover{background:rgba(255,255,255,.78)!important}
+.ws .gw-map,.ws .gw-svg{filter:drop-shadow(0 6px 18px rgba(30,70,130,.12))}
+/* ikonlar ön planda */
+.ws .gx-ti,.ws .gx-st span{width:32px;height:32px;border-radius:10px;box-shadow:0 2px 8px rgba(30,70,130,.12)}
+.ws .gx-ti .ic,.ws .gx-st .ic{width:18px;height:18px}
+.ws .gx-fl{font-size:1.5rem;filter:drop-shadow(0 1px 3px rgba(0,0,0,.18))}
+.ws .gx-h h2{font-size:.98rem}
+.ws .gx-h h2 .ic{width:28px;height:28px;padding:6px;border-radius:9px;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.9);box-shadow:0 2px 8px rgba(30,70,130,.12);color:var(--wb);box-sizing:border-box}
+.ws .gc-qa a .ic{width:16px;height:16px}
+/* açılır-kapanır kutu */
+.ws .gx-h.gxc-h{cursor:pointer;user-select:none;padding:5px 10px 5px 6px;margin-bottom:8px;border-radius:14px;background:rgba(255,255,255,.5);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);border:1px solid rgba(255,255,255,.8);box-shadow:0 4px 16px rgba(30,70,130,.08),inset 0 1px 0 rgba(255,255,255,.85);flex-wrap:nowrap;transition:background .15s}
+.ws .gx-h.gxc-h:hover{background:rgba(255,255,255,.75)}
+.ws .gx-h.gxc-h:focus-visible{outline:2px solid var(--wb);outline-offset:2px}
+.ws .gx-h.gxc-h h2{flex:1;min-width:0}
+.gxc-n{font-size:.68rem;font-weight:700;color:var(--wb);background:rgba(31,111,197,.1);border-radius:999px;padding:2px 8px;white-space:nowrap}
+.gxc-v{width:22px;height:22px;flex:none;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.8);color:var(--wb);font-style:normal;font-size:.8rem;transition:transform .2s}
+.gxc-shut .gxc-v{transform:rotate(-90deg)}
+.gxc-shut>.gx-h.gxc-h{margin-bottom:0}
+.gxc-shut>*:not(.gx-h){display:none!important}
+.gxc-shut.gx-sec,.gx-two>.gxc-shut{padding-bottom:0}
+.gxc-bd{animation:gxcIn .18s ease-out}
+html:has(.ws) body{background:#e6f1fb}
+.ws{display:flex;flex-direction:column}.ws>.ws-foot{margin-top:auto!important}
+@keyframes gxcIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.ws .gx-h.gxc-h .ws-more{margin:0;font-size:.74rem}
+.ws .gx-sec{padding-top:10px}.ws .gx-two{gap:10px 18px}
+.ws .gx-sec.gx-two{align-items:start}
+@media (prefers-reduced-motion:reduce){.gxc-bd,.gxc-v{animation:none;transition:none}}
 </style>
 
 <div class="app">
@@ -3890,8 +3925,9 @@ Object.assign(A,{
  'rp-schadd':()=>{S.rpSch.push({n:RTPL[S.rp.t][0],f:'Her ayın 1\'i, 09:00',to:RTPL[S.rp.t][3],on:true});toast('Rapor her ay otomatik gönderilecek');draw();}
 });
 
-const VER='v99',VERD='25.11.2026';
+const VER='v101',VERD='25.11.2026';
 const CHANGES=[
+ ['v101','25.11.2026','Web sitesi (dünya, kıta, ülke, müşavirlik sayfası) kompakt: bölümler açılır-kapanır kutu (ilk bölüm açık, diğerleri sayaçlı özet), yarı saydam buzlu cam kartlar ve üst bar, büyük ikon rozetleri'],
  ['v99','25.11.2026','Ana sayfa kompakt ve cam görünümlü: Etkinlik akışı ve diğer kutular kapalı/özet geliyor, 10 adım ince tek satır kutu, adımlar tek tek açılır, sayaçlar küçük, yarı saydam buzlu cam kartlar'],
  ['v96','20.11.2026','Kompakt ekranlar: kartlar açılır/kapanır (uzun ekranda ikincil kartlar kapalı gelir), tablolar ve etkinlik listeleri 6 satır + Tümünü göster, bilgi notları tek satır, tanım listeleri 2 sütun, başvuru formu 3 sütun, filtre kartları tek satır, rapor önizlemesi kendi içinde kayar, sıkı boşluklar; Sonlanan etkinlikler ve Arşiv sayfasında yeni kart formu kaldırıldı; üst çubuktaki Veri girişi düğmesi, Bölüm n/9 satırı ve numaralı yol kaldırıldı; bildirimler yalnız gerekli olanlarla sınırlandı'],
  ['v95','18.11.2026','Seçimler açılır kutuda: firma, organizasyon firması, asil/yedek, kurum ve diğer tüm seçimler buton/kart/liste yerine açılır kutu; uzun listeler aramalı kutu'],
@@ -7941,6 +7977,33 @@ const eSt=e=>e.ds==='son'?['Sonlandırıldı','done']:e.ds==='arsiv'?['Arşivde'
 window.addEventListener('hashchange',route);
 route();
 try{if(false&&!localStorage.getItem('i360-tour')&&!location.hash){S.tour=0;renderCoach();}}catch(e){S.tour=0;renderCoach();}
+</script>
+
+<script>
+/* v101 · site bölümleri açılır-kapanır: ilk bölüm açık, diğerleri özet olarak kapalı gelir */
+(()=>{
+ const st=window.__gxc=window.__gxc||{};
+ const cnt=p=>p.querySelectorAll('.gx-cc,.gx-ev,.gx-nw,.gc-ec,.gc-rs').length;
+ const apply=()=>{
+  const hs=[...document.querySelectorAll('.ws .gx-h:not(.gxc-h)')];
+  if(!hs.length)return;
+  const first=document.querySelector('.ws .gx-h');
+  hs.forEach(h=>{
+   const p=h.parentElement,k=(h.querySelector('h2')||h).textContent.trim();
+   if(!(k in st))st[k]=h===first;
+   h.classList.add('gxc-h');h.setAttribute('role','button');h.tabIndex=0;
+   const n=cnt(p);
+   if(n){const s=document.createElement('span');s.className='gxc-n';s.textContent=n;h.insertBefore(s,h.querySelector('.ws-more')||null);}
+   const v=document.createElement('i');v.className='gxc-v';v.textContent='▾';v.setAttribute('aria-hidden','true');h.appendChild(v);
+   const set=o=>{p.classList.toggle('gxc-shut',!o);h.setAttribute('aria-expanded',o);};
+   set(st[k]);
+   const tg=e=>{if(e.target.closest('.ws-more,a,.gx-tabs button'))return;if(e.type==='keydown'&&e.key!=='Enter'&&e.key!==' ')return;e.preventDefault();e.stopPropagation();st[k]=p.classList.contains('gxc-shut');set(st[k]);if(st[k])[...p.children].forEach(c=>{if(c!==h){c.classList.remove('gxc-bd');void c.offsetWidth;c.classList.add('gxc-bd');}});};
+   h.addEventListener('click',tg);h.addEventListener('keydown',tg);
+  });
+ };
+ let q=0;const mo=new MutationObserver(()=>{if(q)return;q=requestAnimationFrame(()=>{q=0;mo.disconnect();try{apply();}catch(e){console.error('gxc',e);}finally{mo.observe(document.body,{childList:true,subtree:true});}});});
+ mo.observe(document.body,{childList:true,subtree:true});apply();
+})();
 </script>
 
 </body></html>
