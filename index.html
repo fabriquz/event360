@@ -2730,6 +2730,10 @@ select.s95:focus,.s95m>summary:focus,.cb95>input:focus{outline:2px solid var(--t
 .e3-h .sb-bc>small,.e3-h .sb-bc>i,.e3-h .sb-bc>b{display:none!important}
 
 
+/* v100 · demo: tablo taşması, menü sade */
+.e3 .k96-cl>span{display:block;flex:1 1 0;min-width:0;overflow:hidden;text-overflow:ellipsis}.e3 .k96-cl.k96-op>span{overflow:visible;text-overflow:clip}
+.k96-tw table{font-size:.8rem}.k96-tw table th,.k96-tw table td{padding:7px 6px}.k96-tw table th{font-size:.64rem;letter-spacing:.02em}.k96-tw table td .chip,.k96-tw table td .pill,.k96-tw table td .st{font-size:.7rem;padding:3px 7px}.k96-tw table td .btn,.k96-tw table td button{white-space:nowrap}
+.k96-tw table:has(th:nth-child(11)) :is(th,td):nth-child(3){display:none}
 /* v99 · Ana sayfa kompakt + cam (saydam) */
 .e3 .pn{gap:8px!important}
 .e3 .pn-c,.e3 .pn-kp{background:rgba(255,255,255,.55)!important;-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);border:1px solid rgba(255,255,255,.75)!important;box-shadow:0 4px 18px rgba(30,70,130,.08),inset 0 1px 0 rgba(255,255,255,.8)!important;border-radius:14px!important}
@@ -3890,8 +3894,9 @@ Object.assign(A,{
  'rp-schadd':()=>{S.rpSch.push({n:RTPL[S.rp.t][0],f:'Her ayın 1\'i, 09:00',to:RTPL[S.rp.t][3],on:true});toast('Rapor her ay otomatik gönderilecek');draw();}
 });
 
-const VER='v99',VERD='25.11.2026';
+const VER='v100',VERD='25.11.2026';
 const CHANGES=[
+ ['v100','25.11.2026','Demo hazırlığı: sol menüde numaralar ve ✓/! durum işaretleri kaldırıldı (menüde yalnız ikon, ad ve sayaç; numaralar yalnız Etkinlik akışında), her bölüme kendi ikonu, Etki bölümü Etki ve takip adını aldı, tüm ekranlar taşma ve yazım için tarandı'],
  ['v99','25.11.2026','Ana sayfa kompakt ve cam görünümlü: Etkinlik akışı ve diğer kutular kapalı/özet geliyor, 10 adım ince tek satır kutu, adımlar tek tek açılır, sayaçlar küçük, yarı saydam buzlu cam kartlar'],
  ['v96','20.11.2026','Kompakt ekranlar: kartlar açılır/kapanır (uzun ekranda ikincil kartlar kapalı gelir), tablolar ve etkinlik listeleri 6 satır + Tümünü göster, bilgi notları tek satır, tanım listeleri 2 sütun, başvuru formu 3 sütun, filtre kartları tek satır, rapor önizlemesi kendi içinde kayar, sıkı boşluklar; Sonlanan etkinlikler ve Arşiv sayfasında yeni kart formu kaldırıldı; üst çubuktaki Veri girişi düğmesi, Bölüm n/9 satırı ve numaralı yol kaldırıldı; bildirimler yalnız gerekli olanlarla sınırlandı'],
  ['v95','18.11.2026','Seçimler açılır kutuda: firma, organizasyon firması, asil/yedek, kurum ve diğer tüm seçimler buton/kart/liste yerine açılır kutu; uzun listeler aramalı kutu'],
@@ -6617,7 +6622,7 @@ const pgWorld=()=>{const live=CC.filter(x=>x[4]).length,nxt=k=>WEV.filter(e=>e.c
  const NOW=5; /* v91 · örnek etkinlik şu an 6. adımda: Program (0'dan sayılır) */
  /* [rota, menü adı, ikon, adım (0-6, 7 = araçlar), durum, not] */
  /* müşavirliğin kendi bölümleri (GT); diğer rollerde bölüm = ortak akış adımı */
- const GT={mus:['Plan','Takvim','Başvuru ve karar','Duyuru','Sonuç ve bitiş','Etki','Destek denetimleri','Pazar araştırması','Bülten ve raporlar']};
+ const GT={mus:['Plan','Takvim','Başvuru ve karar','Duyuru','Sonuç ve bitiş','Etki ve takip','Destek denetimleri','Pazar araştırması','Bülten ve raporlar']};
  const M={
   mus:[['m-plan','Hedef 2027','plan',0,'now','Taslak onay bekliyor',0],['m-takvim','Etkinlik takvimi','takvim',1,'done','15 etkinlik yayında',1],
    ['m-denetim','Organizasyon seçimleri','denetim',2,'done','İpek Yolu seçildi · kayıtta',2],['m-basvuru','Başvurulara görüş','basvuru',2,'now','1 görüş bekliyor · firma seçildi',3],['m-karar','Destek kararı kaydı','gorus',2,'now','1 karar karta işlenecek',3],
@@ -6718,9 +6723,10 @@ const pgWorld=()=>{const live=CC.filter(x=>x[4]).length,nxt=k=>WEV.filter(e=>e.c
   const gs=[...new Set(L.map(x=>x[3]))].sort((a,b)=>(isT(k,a)?99:a)-(isT(k,b)?99:b));
   gs.forEach(g=>{const G=L.filter(x=>x[3]===g),has=G.some(x=>x[0]===cur),E=G.flatMap(x=>ent(x,r,cur));
    const tool=isT(k,g);const st=!tool?SGN(G.map(x=>x[4]).filter(Boolean)):'';const t=!tool?gT(k,g):(G.length===1&&!SUBS[G[0][0]]?G[0][1]:'Araçlar');const pn=pos(k,g);
-   const lead=!tool?`<b class="m2-n ${st}">${st==='done'?'✓':st==='warn'?'!':pn}</b>`:`<b class="m2-n m2-tl">${ic('e-ajan')}</b>`;
+   const GI={'Plan':'plan','Takvim':'takvim','Başvuru ve karar':'basvuru','Başvuru ve teklif':'basvuru','Görüş ve karar':'gorus','Duyuru':'duyuru','Program':'program','Etkinlik günü':'kiosk','Sonuç ve bitiş':'sonuc','Etki':'etki','Etki ve takip':'etki','Rapor':'rapor','Destek denetimleri':'tespit','Pazar araştırması':'pazar','Bülten ve raporlar':'rapor'};
+   const lead=`<b class="m2-n m2-tl">${ic('e-'+(!tool?(GI[t]||G[0][2]):'ajan'))}</b>`;
    const one=E.length===1&&!SUBS[G[0][0]];
-   const key='m2o'+g,op=one?has:(S.m2o[key]??has);const tt=!tool?`${pn}. ${t}`:'Araçlar';
+   const key='m2o'+g,op=one?has:(S.m2o[key]??has);const tt=!tool?t:'Araçlar';
    h+=one?`<div class="m2-s"><a href="#${G[0][0]}" data-go="${G[0][0]}" class="m2-top ${st}${has?' on':''}" title="${tt}">${!tool?'<span class="i3k m2-x"></span>':''}${lead}<span>${t}</span></a></div>`
     :`<div class="m2-s${op?' op':''}"><button class="m2-top ${st}${has?' on':''}" data-act="m2-tg" data-v="${key}" aria-expanded="${op}" title="${tt}">${lead}<span>${t}</span><small>${E.length}</small><i class="m2-ar">▾</i></button><div class="m2-sl">${E.join('')}</div></div>`;});
   return h;};
