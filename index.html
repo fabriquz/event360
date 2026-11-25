@@ -2729,6 +2729,39 @@ select.s95:focus,.s95m>summary:focus,.cb95>input:focus{outline:2px solid var(--t
 .e3 .m2-ey{display:none!important}
 .e3-h .sb-bc>small,.e3-h .sb-bc>i,.e3-h .sb-bc>b{display:none!important}
 
+
+/* v99 · Ana sayfa kompakt + cam (saydam) */
+.e3 .pn{gap:8px!important}
+.e3 .pn-c,.e3 .pn-kp{background:rgba(255,255,255,.55)!important;-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);border:1px solid rgba(255,255,255,.75)!important;box-shadow:0 4px 18px rgba(30,70,130,.08),inset 0 1px 0 rgba(255,255,255,.8)!important;border-radius:14px!important}
+.e3 .pn-c{padding:8px 12px!important;margin:0 0 8px!important}
+.e3 .pn-c>summary{padding:2px 0!important;min-height:26px}
+.e3 .pn-c>summary b{font-size:.92rem!important}
+.e3 .pn-c[open]>summary{margin-bottom:8px}
+.e3 .pn-c>summary small{font-size:.72rem}
+.e3 .pn-k{gap:8px!important;margin:0 0 8px!important}
+.e3 .pn-kp{padding:8px 12px!important;display:block!important;min-width:0}
+.e3 .pn-kp small{display:block;font-size:.64rem!important;margin:0 0 2px!important}
+.e3 .pn-kp b{display:inline!important;font-size:1.3rem!important;line-height:1.1!important;margin:0 8px 0 0!important}
+.e3 .pn-kp span{display:inline!important;font-size:.72rem!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.e3 .pn-2{gap:8px!important;align-items:start}.e3 .pn-col{display:flex;flex-direction:column;gap:8px}.e3 .pn-col>.pn-c{margin:0!important}
+.e3 .e3-b{background:none!important}
+#main{background:radial-gradient(900px 420px at 85% -5%,rgba(96,165,250,.22),transparent 60%),radial-gradient(700px 400px at 5% 60%,rgba(125,211,252,.20),transparent 60%)}
+.m2-dots{display:inline-flex;gap:3px;margin-left:auto;align-items:center}
+.m2-dots i{width:14px;height:5px;border-radius:3px;background:rgba(120,140,170,.25)}
+.m2-dots i.done{background:#2f9e6e}.m2-dots i.now{background:var(--rc,#2563eb)}
+.m2-ch>summary .pn-pr{margin-left:6px}
+.m2-ch>summary::after{margin-left:6px!important}
+.e3 .m2-st{gap:6px!important;margin:0!important;align-items:start}
+.e3 .m2-st>li{padding:0!important;background:rgba(255,255,255,.5)!important;border:1px solid rgba(255,255,255,.8)!important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:10px!important;box-shadow:0 2px 8px rgba(30,70,130,.06)!important;gap:0!important}
+.e3 .m2-st>li.now{background:rgba(37,99,235,.08)!important;border-color:color-mix(in srgb,var(--rc) 40%,#fff)!important}
+.m2-sd>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:5px 8px;min-height:30px}
+.m2-sd>summary::-webkit-details-marker{display:none}
+.m2-sd>summary b{font-size:.78rem;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.m2-q{font-style:normal;font-size:.7rem;color:#2f9e6e}.m2-st li.now .m2-q{color:var(--rc)}
+.m2-sd>*:not(summary){margin:0 8px 6px}
+.m2-sd[open]>summary{border-bottom:1px solid rgba(120,140,170,.18);margin-bottom:6px}
+.m2-sd .m2-sn{width:20px;height:20px;font-size:.7rem;flex:none}
+.m2-sd .m2-now{font-size:.74rem}.m2-sd .m2-end{font-size:.72rem}
 </style>
 
 <div class="app">
@@ -3857,8 +3890,9 @@ Object.assign(A,{
  'rp-schadd':()=>{S.rpSch.push({n:RTPL[S.rp.t][0],f:'Her ayın 1\'i, 09:00',to:RTPL[S.rp.t][3],on:true});toast('Rapor her ay otomatik gönderilecek');draw();}
 });
 
-const VER='v96',VERD='20.11.2026';
+const VER='v99',VERD='25.11.2026';
 const CHANGES=[
+ ['v99','25.11.2026','Ana sayfa kompakt ve cam görünümlü: Etkinlik akışı ve diğer kutular kapalı/özet geliyor, 10 adım ince tek satır kutu, adımlar tek tek açılır, sayaçlar küçük, yarı saydam buzlu cam kartlar'],
  ['v96','20.11.2026','Kompakt ekranlar: kartlar açılır/kapanır (uzun ekranda ikincil kartlar kapalı gelir), tablolar ve etkinlik listeleri 6 satır + Tümünü göster, bilgi notları tek satır, tanım listeleri 2 sütun, başvuru formu 3 sütun, filtre kartları tek satır, rapor önizlemesi kendi içinde kayar, sıkı boşluklar; Sonlanan etkinlikler ve Arşiv sayfasında yeni kart formu kaldırıldı; üst çubuktaki Veri girişi düğmesi, Bölüm n/9 satırı ve numaralı yol kaldırıldı; bildirimler yalnız gerekli olanlarla sınırlandı'],
  ['v95','18.11.2026','Seçimler açılır kutuda: firma, organizasyon firması, asil/yedek, kurum ve diğer tüm seçimler buton/kart/liste yerine açılır kutu; uzun listeler aramalı kutu'],
  ['v94','14.11.2026','Etkinlik kartları sade: duruma göre üç grup (Yürüyen, Takvimde, Bitti · takipte), tam ad, tarih, yer, çeşit ve adımın adı; süzgeç tek seçim kutusu; Yeni etkinlik kartı sayfası yalnız formu gösterir'],
@@ -6474,9 +6508,9 @@ const pgWorld=()=>{const live=CC.filter(x=>x[4]).length,nxt=k=>WEV.filter(e=>e.c
  const dash=k=>{const d=D[k];const T={done:'Tamam',now:'Sırada',warn:'Gecikti',todo:'Bekliyor'};
   return `<div class="pn">${prog(k)}
   <div class="pn-k">${d.k.map(x=>`<a class="pn-kp" href="#${x[3]}" data-go="${x[3]}"><small>${x[0]}</small><b>${x[1]}</b><span>${x[2]}</span></a>`).join('')}</div>
-  <div class="pn-2"><details class="pn-c" open><summary><b>Yapılacaklar</b><span class="pn-pr">${d.t.length} iş</span></summary><ul class="pn-t">${d.t.map(x=>`<li class="${x[0]}"><a href="#${x[3]}" data-go="${x[3]}"><span class="pn-d">${T[x[0]]}</span><span><b>${x[1]}</b><small>${x[2]}</small></span><em>›</em></a></li>`).join('')}</ul></details>
-  <div class="pn-col"><details class="pn-c" open><summary><b>Yaklaşan etkinlikler</b></summary><ul class="pn-e">${d.e.map(x=>`<li><span>${x[0]}</span><b>${x[1]}</b><small>${x[2]}</small></li>`).join('')}</ul></details>
-  <details class="pn-c" open><summary><b>Son hareketler</b></summary><ul class="pn-a">${d.a.map(x=>`<li><small>${x[0]}</small>${x[1]}</li>`).join('')}</ul></details></div></div></div>`;};
+  <div class="pn-2"><details class="pn-c"><summary><b>Yapılacaklar</b><span class="pn-pr">${d.t.length} iş</span></summary><ul class="pn-t">${d.t.map(x=>`<li class="${x[0]}"><a href="#${x[3]}" data-go="${x[3]}"><span class="pn-d">${T[x[0]]}</span><span><b>${x[1]}</b><small>${x[2]}</small></span><em>›</em></a></li>`).join('')}</ul></details>
+  <div class="pn-col"><details class="pn-c"><summary><b>Yaklaşan etkinlikler</b></summary><ul class="pn-e">${d.e.map(x=>`<li><span>${x[0]}</span><b>${x[1]}</b><small>${x[2]}</small></li>`).join('')}</ul></details>
+  <details class="pn-c"><summary><b>Son hareketler</b></summary><ul class="pn-a">${d.a.map(x=>`<li><small>${x[0]}</small>${x[1]}</li>`).join('')}</ul></details></div></div></div>`;};
  ['mus','org','hiz','fir'].forEach(k=>{V[PANO[k]]=()=>dash(k);});
  /* ---------- kabuk dönüşümü ---------- */
  const grp=(key,title,anchors,k,extra)=>{const s=ST[k]||{};const st=anchors.filter(a=>s[a.dataset.go]);const d=st.filter(a=>s[a.dataset.go][0]==='done').length;const closed=S.sbg[key];
@@ -6695,11 +6729,11 @@ const pgWorld=()=>{const live=CC.filter(x=>x[4]).length,nxt=k=>WEV.filter(e=>e.c
   return `<div class="m2-hf">${g.length?`<div class="m2-row"><small>Gelen</small>${g.map(chip).join('')}</div>`:''}${v.length?`<div class="m2-row"><small>Giden</small>${v.map(chip).join('')}</div>`:''}</div>`;};
  /* pano: 7 adımlık ortak akış */
  const chain=k=>{const L=items(k);
-  return `<details class="pn-c m2-ch" open><summary><b>Etkinlik akışı</b><small>İnşaat Malzemeleri Ticaret Heyeti · 15–17 Ara 2026</small><span class="pn-pr">Adım ${NOW+1} / ${TL}</span></summary>
+  return `<details class="pn-c m2-ch"><summary><b>Etkinlik akışı</b><small>İnşaat Malzemeleri Ticaret Heyeti · 15–17 Ara 2026</small><span class="m2-dots" aria-hidden="true">${STG.map((x,i)=>`<i class="${i<NOW?'done':i===NOW?'now':''}"></i>`).join('')}</span><span class="pn-pr">Adım ${NOW+1} / ${TL}</span></summary>
   <ol class="m2-st">${STG.map(([t,ac],i)=>{const mine=L.filter(x=>(x[6]!==undefined?x[6]:x[3])===i),st=i<NOW?'done':i===NOW?'now':'todo';
-   return `<li class="${st}${mine.length?' me':''}"><div class="m2-sh"><span class="m2-sn">${i<NOW?'✓':i+1}</span><b>${t}</b></div><div class="m2-now ${st}">${st==='done'?'✓ Tamamlandı':st==='now'?`Şu an: <b>${['Müşavirlikte · hedef yılı hazırlanıyor','Müşavirlikte · takvime giriliyor','İşbirliği kuruluşunda · teklifler karşılaştırılıyor','Müşavirlik görüşünde · destek kararı bekleniyor','İşbirliği kuruluşunda · hesap davetleri','İşbirliği kuruluşu onayında · B2B programı','Organizasyon firmasında · görüşmeler sürüyor','Müşavirlik onayında · kapanış raporu','Katılımcı firmalarda · takip formları','Müşavirlikte · rapor hazırlanıyor'][i]}</b>`:'Henüz başlamadı'}</div>${STG[i][2]?`<div class="m2-end" title="Bu şart gerçekleşince adım tamamlanır, sonraki adıma geçilir">Bitirme şartı: ${STG[i][2]}</div>`:''}
+   return `<li class="${st}${mine.length?' me':''}"><details class="m2-sd"><summary class="m2-sh"><span class="m2-sn">${i<NOW?'✓':i+1}</span><b>${t}</b><em class="m2-q">${st==='done'?'✓':st==='now'?'●':''}</em></summary><div class="m2-now ${st}">${st==='done'?'✓ Tamamlandı':st==='now'?`Şu an: <b>${['Müşavirlikte · hedef yılı hazırlanıyor','Müşavirlikte · takvime giriliyor','İşbirliği kuruluşunda · teklifler karşılaştırılıyor','Müşavirlik görüşünde · destek kararı bekleniyor','İşbirliği kuruluşunda · hesap davetleri','İşbirliği kuruluşu onayında · B2B programı','Organizasyon firmasında · görüşmeler sürüyor','Müşavirlik onayında · kapanış raporu','Katılımcı firmalarda · takip formları','Müşavirlikte · rapor hazırlanıyor'][i]}</b>`:'Henüz başlamadı'}</div>${STG[i][2]?`<div class="m2-end" title="Bu şart gerçekleşince adım tamamlanır, sonraki adıma geçilir">Bitirme şartı: ${STG[i][2]}</div>`:''}
     <div class="m2-ac">${ac.map(a=>`<span class="${a===k?'me':''}" style="--cc:${RC[a]}">${RS[a]}</span>`).join('')}</div>
-    ${mine.length?`<div class="m2-my">${mine.map(x=>`<a href="#${x[0]}" data-go="${x[0]}" class="${x[4]}">${x[1]}</a>`).join('')}</div>`:'<div class="m2-my m2-no">Sizde iş yok</div>'}</li>`;}).join('')}</ol></details>`;};
+    ${mine.length?`<div class="m2-my">${mine.map(x=>`<a href="#${x[0]}" data-go="${x[0]}" class="${x[4]}">${x[1]}</a>`).join('')}</div>`:'<div class="m2-my m2-no">Sizde iş yok</div>'}</details></li>`;}).join('')}</ol></details>`;};
 
  /* v67 · tek ajan: Firma ajanı, yalnız organizasyon firmasında */
  S.fa=S.fa||{};
