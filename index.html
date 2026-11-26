@@ -2801,6 +2801,32 @@ html:has(.ws) body{background:#e6f1fb}
 .ws .gx-sec{padding-top:10px}.ws .gx-two{gap:10px 18px}
 .ws .gx-sec.gx-two{align-items:start}
 @media (prefers-reduced-motion:reduce){.gxc-bd,.gxc-v{animation:none;transition:none}}
+
+/* v103 · Giriş sade: hedef şeridi + kıta/bölge/ülke açılır kutular */
+.ws .gw-ht h1{font-size:1.7rem;margin:4px 0}.ws .gw-ht p{margin:0 0 8px;font-size:.92rem}
+.g3-hd{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap;margin:8px 0 6px}
+.g3-t{display:grid;grid-template-columns:30px auto;column-gap:8px;align-items:center;padding:6px 12px 6px 6px;border-radius:12px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.8);box-shadow:0 4px 16px rgba(30,70,130,.08)}
+.g3-t span{grid-row:span 2;width:30px;height:30px;border-radius:9px;background:#e8f1fc;color:var(--wb);display:grid;place-items:center}.g3-t .ic{width:17px;height:17px}
+.g3-t b{font-size:.84rem;color:var(--wn)}.g3-t small{font-size:.66rem;color:var(--wm)}
+.g3-y{display:flex;gap:6px;flex:1;min-width:260px}
+.g3-y>div{flex:1;padding:5px 10px;border-radius:12px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.8);box-shadow:0 4px 16px rgba(30,70,130,.08);display:flex;flex-direction:column;line-height:1.15}
+.g3-y>div.on{border-color:rgba(31,111,197,.45);background:rgba(255,255,255,.78)}
+.g3-y small{font-size:.68rem;font-weight:700;color:var(--wm)}.g3-y b{font-family:var(--f-display);font-size:1.12rem;color:var(--wn)}.g3-y em{font-style:normal;font-size:.64rem;color:var(--wm)}
+.g3-k{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;align-items:start}
+.g3-kd,.g3-rd{background:rgba(255,255,255,.55);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.8);box-shadow:0 4px 16px rgba(30,70,130,.08);border-radius:14px}
+.g3-kd>summary,.g3-rd>summary{display:flex;align-items:center;gap:8px;list-style:none;cursor:pointer;padding:8px 10px;user-select:none}
+.g3-kd>summary::-webkit-details-marker,.g3-rd>summary::-webkit-details-marker{display:none}
+.g3-kn{font-weight:700;color:var(--wn);font-size:.95rem}.g3-kd>summary small,.g3-rd>summary small{font-size:.7rem;color:var(--wm);margin-left:auto}
+.g3-kd>summary i,.g3-rd>summary i{font-style:normal;font-size:.75rem;color:var(--wb);transition:transform .2s}
+details:not([open])>summary>i{transform:rotate(-90deg)}
+.g3-rd{margin:0 8px 8px;border-radius:11px;background:rgba(255,255,255,.5)}.g3-rd>summary{padding:6px 9px;font-size:.8rem;font-weight:600;color:var(--wn)}
+.g3-cl{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:0 6px 7px}.g3-c{grid-template-columns:22px 1fr}.g3-c small{display:none}.g3-c em{grid-column:2;margin-top:-3px}.g3-c.on small{display:none}.ws .gw-ht .gx-st{margin-top:2px}
+.g3-c{display:grid;grid-template-columns:24px 1fr auto;align-items:center;gap:7px;text-align:left;border:0;background:rgba(255,255,255,.7);border-radius:9px;padding:5px 8px;cursor:pointer;font:inherit;color:var(--wn)}
+.g3-c:hover{background:#fff}.g3-c.on{outline:1.5px solid rgba(31,111,197,.5)}
+.g3-c b{font-size:.84rem}.g3-c small{font-size:.68rem;color:var(--wm)}.g3-c em{grid-column:2/4;font-style:normal;font-size:.66rem;color:#12805c;font-weight:700;margin-top:-2px}
+.g3-c .gx-fl{font-size:1.2rem}
+@media(max-width:900px){.g3-k{grid-template-columns:1fr 1fr}}@media(max-width:560px){.g3-k{grid-template-columns:1fr}.g3-y{flex-wrap:wrap}.g3-y>div{flex:1 1 40%}}
+.ws .gx-ev,.ws .gx-nw{padding-top:6px;padding-bottom:6px}.ws .gx-ul{gap:6px}
 </style>
 
 <div class="app">
@@ -3929,9 +3955,10 @@ Object.assign(A,{
  'rp-schadd':()=>{S.rpSch.push({n:RTPL[S.rp.t][0],f:'Her ayın 1\'i, 09:00',to:RTPL[S.rp.t][3],on:true});toast('Rapor her ay otomatik gönderilecek');draw();}
 });
 
-const VER='v102',VERD='25.11.2026';
+const VER='v103',VERD='26.11.2026';
 const CHANGES=[
  ['v102','25.11.2026','Demo hazırlığı: sol menüde numaralar ve ✓/! durum işaretleri kaldırıldı (menüde yalnız ikon, ad ve sayaç; numaralar yalnız Etkinlik akışında), her bölüme kendi ikonu, Etki bölümü Etki ve takip adını aldı, tüm ekranlar taşma ve yazım için tarandı'],
+ ['v103','26.11.2026','Web sitesi girişi sade: kıta → bölge → ülke açılır kutular, yıllık ihracat hedefi şeridi (2025 gerçekleşen, 2026-2028 örnek hedef), Yaklaşan etkinlikler ve Bakanlıktan haberler (5+5) açık gelir'],
  ['v101','25.11.2026','Web sitesi (dünya, kıta, ülke, müşavirlik sayfası) kompakt: bölümler açılır-kapanır kutu (ilk bölüm açık, diğerleri sayaçlı özet), yarı saydam buzlu cam kartlar ve üst bar, büyük ikon rozetleri'],
  ['v99','25.11.2026','Ana sayfa kompakt ve cam görünümlü: Etkinlik akışı ve diğer kutular kapalı/özet geliyor, 10 adım ince tek satır kutu, adımlar tek tek açılır, sayaçlar küçük, yarı saydam buzlu cam kartlar'],
  ['v96','20.11.2026','Kompakt ekranlar: kartlar açılır/kapanır (uzun ekranda ikincil kartlar kapalı gelir), tablolar ve etkinlik listeleri 6 satır + Tümünü göster, bilgi notları tek satır, tanım listeleri 2 sütun, başvuru formu 3 sütun, filtre kartları tek satır, rapor önizlemesi kendi içinde kayar, sıkı boşluklar; Sonlanan etkinlikler ve Arşiv sayfasında yeni kart formu kaldırıldı; üst çubuktaki Veri girişi düğmesi, Bölüm n/9 satırı ve numaralı yol kaldırıldı; bildirimler yalnız gerekli olanlarla sınırlandı'],
@@ -6209,17 +6236,18 @@ var UZEV=(()=>{
   ${CC.slice().sort((p,q)=>p[4]-q[4]).map(x=>{const [a,b]=gxy(GWP[x[0]]);return `<g class="gw-pin ${x[4]?'on':'c'} ${GWL[x[0]]?'lb':''}" data-act="ws-c" data-v="${x[0]}" tabindex="0" role="button" aria-label="${x[1]}"><title>${x[2]} Ticaret Müşavirliği · ${x[4]?'yayında':'yakında'}</title>${x[4]?`<circle class="gw-pulse" cx="${a}" cy="${b}" r="10"/>`:''}<circle class="gw-hit" cx="${a}" cy="${b}" r="8"/><circle cx="${a}" cy="${b}" r="${x[4]?6:4.2}"/><text x="${a}" y="${b-10}">${x[1]}</text></g>`;}).join('')}</svg>`;};
  const TYI={heyet:'heyet',fuar:'fuar',alim:'alici',web:'online'};
  const tIc=t=>`<span class="gx-ti" style="--tc:${TY[t][2]}">${ic(TYI[t]||'cal')}</span>`;
+const G3Y=[['2025','273,4','gerçekleşen','on'],['2026','282,0*','örnek hedef',''],['2027','300,0*','örnek hedef',''],['2028','320,0*','örnek hedef','']];
 const pgWorld=()=>{const live=CC.filter(x=>x[4]).length,nxt=k=>WEV.filter(e=>e.cc===k).slice().sort(ord)[0],K=S.wxK,B=S.wxB,LL=wxList();
   const up=WEV.slice().sort(ord).slice(0,5);
   return `
-  <section class="gw-hero"><div class="ws-in gw-hg"><div class="gw-ht"><span class="gw-eb">${ic('globe')} T.C. Ticaret Bakanlığı · Yurt dışı teşkilatı</span><h1>Dünya genelinde ihracat etkinlikleri</h1><p>Ticaret müşavirlikleri heyet, alım heyeti ve fuar takvimini burada yayınlar. Haritada ya da listede bir ülke seçin.</p>
-   <div class="gx-st">${[['musavir',gwN(),'müşavirlik · '+live+' yayında'],['cal',WEV.length,'etkinlik · 2027'],['ihracat','273,4 mlr $','2025 ihracatı']].map(([i,v,l])=>`<div><span>${ic(i)}</span><b>${v}</b><small>${l}</small></div>`).join('')}</div></div>
-   <div class="gw-map">${gwMap()}<span class="gw-lg"><i class="on"></i>Yayında (pilot) <i class="c"></i>Müşavirlik sayfası yakında <i></i>Diğer müşavirlikler <b>${gwN()} müşavirlik</b></span></div></div></section>
-  <section class="ws-in gx-sec"><div class="gx-h"><h2>${ic('musavir')} Müşavirlik seçin</h2><div class="gx-tabs">${[['','Tümü',CC.length],...['Asya','Avrupa','Afrika','Amerika'].map(k=>[k,k,CC.filter(x=>x[5]===k).length])].map(([v,l,n])=>`<button class="${(K||'')===v?'on':''}" data-act="wx-k" data-v="${v}">${l}<small>${n}</small></button>`).join('')}</div></div>
-   ${K?`<div class="gx-rg">${[['','Bütün '+K],...wxB(K).map(b=>[b,b])].map(([v,l])=>`<button class="${(B||'')===v?'on':''}" data-act="wx-b" data-v="${v}">${l}</button>`).join('')}</div>`:''}
-   <div class="gx-cg">${LL.map(x=>{const e=nxt(x[0]);return `<button class="gx-cc ${x[4]?'on':''}" data-act="ws-c" data-v="${x[0]}"><span class="gx-fl">${x[3]}</span><span class="gx-cb"><b>${x[1]}</b><small>${x[2]} Ticaret Müşavirliği</small><span class="gx-ne">${e?`${ic('cal')} ${e.gun} ${e.ay} · ${tr(e.n)}`:'Etkinlik henüz yok'}</span></span><em>${x[4]?'Yayında':'yakında'}</em></button>`;}).join('')}</div></section>
+  <section class="gw-hero"><div class="ws-in gw-hg"><div class="gw-ht"><span class="gw-eb">${ic('globe')} T.C. Ticaret Bakanlığı · Yurt dışı teşkilatı</span><h1>Dünya genelinde ihracat etkinlikleri</h1><p>Müşavirliklerin heyet, alım heyeti ve fuar takvimi. Bir ülke seçin.</p>
+   <div class="g3-hd"><div class="g3-t"><span>${ic('ihracat')}</span><b>Yıllık ihracat hedefi</b><small>Türkiye · mal ihracatı, mlr $</small></div><div class="g3-y">${G3Y.map(y=>`<div class="${y[3]}"><small>${y[0]}</small><b>${y[1]}</b><em>${y[2]}</em></div>`).join('')}</div></div>
+   <div class="gx-st">${[['musavir',gwN(),'müşavirlik · '+live+' yayında'],['cal',WEV.length,'etkinlik · 2027']].map(([i,v,l])=>`<div><span>${ic(i)}</span><b>${v}</b><small>${l}</small></div>`).join('')}</div></div>
+   <div class="gw-map">${gwMap()}<span class="gw-lg"><i class="on"></i>Yayında (pilot) <i class="c"></i>Yakında <i></i>Diğer <b>${gwN()} müşavirlik</b></span></div></div></section>
+  <section class="ws-in gx-sec"><div class="gx-h"><h2>${ic('musavir')} Müşavirlik seçin</h2><span class="gxc-n">${CC.length} ülke</span></div>
+   <div class="g3-k">${['Asya','Avrupa','Afrika','Amerika'].map(k=>{const ks=CC.filter(x=>x[5]===k),rs=[...new Set(ks.map(x=>WXR[x[0]]||k))];const lv=ks.filter(x=>x[4]).length;return `<details class="g3-kd" open><summary><span class="g3-kn">${k}</span><small>${ks.length} ülke${lv?' · '+lv+' yayında':''}</small><i>▾</i></summary>${rs.map(r=>{const rc=ks.filter(x=>(WXR[x[0]]||k)===r);return `<details class="g3-rd" ${rc.some(x=>x[4])||rc.length<=1?'open':''}><summary><span>${r}</span><small>${rc.length}</small><i>▾</i></summary><div class="g3-cl">${rc.map(x=>{const e=nxt(x[0]);return `<button class="g3-c ${x[4]?'on':''}" data-act="ws-c" data-v="${x[0]}" title="${x[2]} Ticaret Müşavirliği"><span class="gx-fl">${x[3]}</span><b>${x[1]}</b><small>${e?e.gun+' '+e.ay:'yakında'}</small>${x[4]?'<em>Yayında</em>':''}</button>`;}).join('')}</div></details>`;}).join('')}</details>`;}).join('')}</div></section>
   <section class="ws-in gx-sec gx-two"><div><div class="gx-h"><h2>${ic('cal')} Yaklaşan etkinlikler</h2>${L('etk','Tümü →','ws-more')}</div><div class="gx-ul">${up.map(e=>{const x=ccOf(e.cc);return `<a href="#site" class="gx-ev" data-act="ws-p" data-v="e:${e.id}">${tIc(e.ty)}<span class="gx-d"><b>${e.gun}</b>${e.ay}</span><span class="gx-eb"><b>${tr(e.n)}</b><small>${x[3]} ${x[1]} · ${tr(e.nerede)}</small></span></a>`;}).join('')}</div></div>
-   <div><div class="gx-h"><h2>${ic('duyuru360')} Bakanlıktan haberler</h2>${L('hab','Tümü →','ws-more')}</div><div class="gx-ul">${WNW.slice(0,4).map(n=>`<a href="#site" class="gx-nw" data-act="ws-p" data-v="n:${n.id}"><span class="gx-th">${cover(n.cv,'t'+n.id)}</span><span class="gx-eb"><span class="ws-k">${n.k}</span><b>${tr(n.t)}</b><small>${n.d}</small></span></a>`).join('')}</div></div></section>`;};
+   <div><div class="gx-h"><h2>${ic('duyuru360')} Bakanlıktan haberler</h2>${L('hab','Tümü →','ws-more')}</div><div class="gx-ul">${WNW.slice(0,5).map(n=>`<a href="#site" class="gx-nw" data-act="ws-p" data-v="n:${n.id}"><span class="gx-th">${cover(n.cv,'t'+n.id)}</span><span class="gx-eb"><span class="ws-k">${n.k}</span><b>${tr(n.t)}</b><small>${n.d}</small></span></a>`).join('')}</div></div></section>`;};
 
  /* v52 · Kıta → bölge → ülke seçimi */
  const WXR={uz:'Orta Asya',kz:'Orta Asya',kg:'Orta Asya',tm:'Orta Asya',az:'Kafkasya',ge:'Kafkasya',iq:'Orta Doğu',sa:'Körfez',de:'Batı Avrupa',pl:'Orta Avrupa',eg:'Kuzey Afrika',ng:'Batı Afrika',br:'Güney Amerika',us:'Kuzey Amerika'};
@@ -7996,7 +8024,7 @@ try{if(false&&!localStorage.getItem('i360-tour')&&!location.hash){S.tour=0;rende
   const first=document.querySelector('.ws .gx-h');
   hs.forEach(h=>{
    const p=h.parentElement,k=(h.querySelector('h2')||h).textContent.trim();
-   if(!(k in st))st[k]=h===first;
+   if(!(k in st))st[k]=h===first||/^(Yaklaşan etkinlikler|Bakanlıktan haberler)$/.test(k);
    h.classList.add('gxc-h');h.setAttribute('role','button');h.tabIndex=0;
    const n=cnt(p);
    if(n){const s=document.createElement('span');s.className='gxc-n';s.textContent=n;h.insertBefore(s,h.querySelector('.ws-more')||null);}
