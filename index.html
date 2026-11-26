@@ -2849,6 +2849,58 @@ details:not([open])>summary>i{transform:rotate(-90deg)}
 
 /* v104 · dünya haritası büyük */
 @media(min-width:901px){.gw-hg{grid-template-columns:minmax(360px,.34fr) minmax(0,1.66fr)!important;gap:8px!important}.gw-svg{max-height:none!important;transform:scale(1.06);transform-origin:50% 40%}.gw-ht h1{font-size:1.5rem!important}.g3-y{min-width:0}.g3-y>div{padding:4px 8px}.g3-y b{font-size:1rem}.gw-pin text{font-size:11px!important}.ws .gw-hero{padding-bottom:0!important}.gw-lg{font-size:.74rem}}
+
+/* v105 · site alt sayfaları: geniş, kompakt, cam, Özbek vurgu — dünya ve ülke sayfalarının hepsi */
+.ws .ws-sec{padding-top:12px;padding-bottom:10px}
+.ws .ws-cr{margin-bottom:6px;font-size:.74rem}
+.ws .ws-h1{font-size:1.3rem;margin:0 0 2px;display:flex;align-items:center;gap:10px}
+.ws .ws-h1:after{content:"";flex:1;height:8px;border-radius:4px;background:repeating-linear-gradient(90deg,var(--uz1) 0 8px,var(--uz2) 8px 16px,var(--uz3) 16px 24px,#fff 24px 28px);opacity:.28;max-width:220px}
+.ws .ws-lede{font-size:.86rem;margin:0 0 8px;max-width:none}
+.ws .ws-h2{font-size:1rem;margin:14px 0 8px;display:flex;align-items:center;gap:8px}
+.ws .ws-h2:before{content:"";width:10px;height:10px;transform:rotate(45deg);background:var(--uz2);border:2px solid var(--uz3);flex:none}
+.ws .ws-fil{gap:6px;margin-bottom:6px}.ws .ws-fil button{padding:4px 12px;font-size:.78rem;background:rgba(255,255,255,.65);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.ws .ws-fil button.on{background:var(--uz1);border-color:var(--uz1)}
+/* cam kartlar */
+.ws .ws-ev,.ws .ws-nw,.ws .ws-door,.ws .ws-box,.ws .ws-5,.ws .ws-flow>*,.ws .ws-res>*,.ws .ws-dl li{background:rgba(255,255,255,.62)!important;-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);border:1px solid rgba(255,255,255,.85)!important;box-shadow:0 4px 16px rgba(30,70,130,.08)}
+/* Etkinlikler: ay rayı + 2 sütun */
+.ws .ws-mon{display:grid;grid-template-columns:58px 1fr;gap:8px;align-items:start;margin-bottom:6px}
+.ws .ws-mon>h3{margin:2px 0 0;font-size:.74rem;letter-spacing:.04em;text-align:center;color:#fff;background:linear-gradient(160deg,var(--uz1),var(--uz2));border-radius:10px;padding:7px 2px;line-height:1.2;position:sticky;top:62px}
+.ws .ws-mon>.ws-evs,.ws .ws-mon>.ws-evs.col{grid-template-columns:repeat(auto-fill,minmax(330px,1fr))!important;gap:8px;min-width:0}
+.ws .ws-ev{padding:8px 10px;gap:10px;border-radius:12px;align-items:center}
+.ws .ws-dt{width:44px;padding:5px 0;border-radius:9px}.ws .ws-dt b{font-size:1.15rem}.ws .ws-dt span{font-size:.62rem}.ws .ws-dt small{display:none}
+.ws .ws-evb{display:grid;grid-template-columns:1fr auto;column-gap:8px;align-items:center}.ws .ws-evb h3{grid-column:1/-1;font-size:.88rem;margin:3px 0 2px}.ws .ws-evb p{margin:0;font-size:.74rem}.ws .ws-evb .ws-st{justify-self:end;font-size:.68rem;padding:2px 7px}.ws .ws-tag{font-size:.64rem;padding:2px 8px}.ws .ws-cn{font-size:.72rem}
+/* Haberler: 4 sütun, kısa görsel */
+.ws .ws-ng{grid-template-columns:repeat(4,1fr);gap:10px}.ws .ws-nw .ws-cvw{height:92px}.ws .ws-nwb{padding:9px 11px}.ws .ws-nwb h3{font-size:.86rem;margin:4px 0}.ws .ws-nwb p{font-size:.76rem;margin:0 0 4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.ws .ws-nwb small{font-size:.68rem}
+.ws .ws-dl{display:grid;grid-template-columns:1fr 1fr;gap:6px}.ws .ws-dl li{padding:7px 10px;border-radius:11px;gap:10px}.ws .ws-dl time{width:74px;font-size:.74rem;color:var(--uz1)}.ws .ws-dl b{font-size:.84rem}.ws .ws-dl small{font-size:.72rem}
+/* Katılım */
+.ws .ws-doors{gap:8px}.ws .ws-door{padding:12px 14px;gap:5px;border-radius:14px}.ws .ws-door p{font-size:.78rem;line-height:1.4;margin-bottom:2px}.ws .ws-door .ws-btn{padding:6px 14px;font-size:.8rem}
+/* 5N1K + etkinlik detayı */
+.ws .ws-evh{min-height:150px}.ws .ws-evhb{padding-top:12px;padding-bottom:14px}.ws .ws-evhb h1{font-size:clamp(1.2rem,2.2vw,1.6rem);margin:6px 0 2px}.ws .ws-evhb p{font-size:.84rem}
+.ws .ws-5c{padding:10px 14px}.ws .ws-5c h3,.ws .ws-5c b{font-size:.84rem}.ws .ws-5c p,.ws .ws-5c span{font-size:.78rem;line-height:1.4}
+.ws .ws-evg{grid-template-columns:1fr 280px;gap:14px}
+.ws .ws-prog li{padding:5px 0 5px 14px;font-size:.84rem}.ws .ws-prog time{width:58px}.ws .ws-prog li:before{top:10px}
+.ws .ws-box{padding:12px;border-radius:14px}.ws .ws-box dl{font-size:.8rem}
+
+.ws .ws-sec:has(>.ws-mon){display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-content:start}
+.ws .ws-sec:has(>.ws-mon)>*{grid-column:1/-1}
+.ws .ws-sec:has(>.ws-mon)>.ws-mon{display:contents}
+.ws .ws-sec:has(>.ws-mon) .ws-mon>h3{display:none}
+.ws .ws-sec:has(>.ws-mon) .ws-mon>.ws-evs{display:contents}
+.ws .ws-sec:has(>.ws-mon) .ws-ev{grid-column:auto}
+.ws .ws-evb h3{color:var(--wn)!important;letter-spacing:0!important;font-family:var(--f-display);text-transform:none}
+@media(max-width:1000px){.ws .ws-sec:has(>.ws-mon){grid-template-columns:1fr 1fr}}@media(max-width:640px){.ws .ws-sec:has(>.ws-mon){grid-template-columns:1fr}}
+
+.ws .ws-art{max-width:1180px;padding-top:12px;display:grid;grid-template-columns:minmax(0,1fr) 340px;column-gap:20px;align-content:start}
+.ws .ws-art>*{grid-column:1}
+.ws .ws-art h1{font-size:1.4rem;margin:6px 0}.ws .ws-art>p{font-size:.9rem;line-height:1.6;margin:0 0 8px}.ws .ws-art .ws-lede{font-size:.95rem}
+.ws .ws-art>.ws-artc{grid-column:2;grid-row:1/span 5;height:210px;margin:0;border-radius:14px;align-self:start}
+.ws .ws-art>.ws-rel{grid-column:2;grid-row:6/span 6;margin-top:0;align-self:start;gap:8px}
+@media(max-width:900px){.ws .ws-art{grid-template-columns:1fr}.ws .ws-art>.ws-artc,.ws .ws-art>.ws-rel{grid-column:1;grid-row:auto}}
+
+.ws .ws-art>.ws-k{justify-self:start;padding:2px 10px;border-radius:999px}.ws .ws-art>.ws-rel{margin-top:10px}
+.ws .ws-tr{background:linear-gradient(135deg,#0b2545 0%,#143f8f 60%,#0f7d86 100%)!important;padding:16px 22px!important;border-radius:16px;border:1px solid rgba(244,197,66,.4)}
+.ws .ws-tr h2{font-size:1.15rem!important}.ws .ws-tr p{font-size:.84rem!important;margin:6px 0!important}
+@media(max-width:900px){.ws .ws-ng{grid-template-columns:1fr 1fr}.ws .ws-dl{grid-template-columns:1fr}.ws .ws-mon{grid-template-columns:1fr}.ws .ws-mon>h3{position:static;text-align:left;padding:4px 10px}.ws .ws-evg{grid-template-columns:1fr}.ws .ws-evs,.ws .ws-evs.col{grid-template-columns:1fr}}
 </style>
 
 <div class="app">
@@ -3977,9 +4029,10 @@ Object.assign(A,{
  'rp-schadd':()=>{S.rpSch.push({n:RTPL[S.rp.t][0],f:'Her ayın 1\'i, 09:00',to:RTPL[S.rp.t][3],on:true});toast('Rapor her ay otomatik gönderilecek');draw();}
 });
 
-const VER='v104',VERD='26.11.2026';
+const VER='v105',VERD='26.11.2026';
 const CHANGES=[
  ['v102','25.11.2026','Demo hazırlığı: sol menüde numaralar ve ✓/! durum işaretleri kaldırıldı (menüde yalnız ikon, ad ve sayaç; numaralar yalnız Etkinlik akışında), her bölüme kendi ikonu, Etki bölümü Etki ve takip adını aldı, tüm ekranlar taşma ve yazım için tarandı'],
+ ['v105','26.11.2026','Web sitesi alt sayfaları (Etkinlikler, Haberler, Ticaret, Katılım, etkinlik ve haber detayı) baştan kompakt: ay rayı + 2 sütun etkinlik, 4 sütun haber, cam kartlar, ince başlıklar, Özbek desen vurgusu'],
  ['v104','26.11.2026','Dünya girişindeki harita büyütüldü: harita sütunu genişletildi, yükseklik sınırı kaldırıldı, etiketler büyütüldü'],
  ['v103','26.11.2026','Web sitesi girişi sade: kıta → bölge → ülke açılır kutular, yıllık ihracat hedefi şeridi (2025 gerçekleşen, 2026-2028 örnek hedef), Yaklaşan etkinlikler ve Bakanlıktan haberler (5+5) açık gelir; Özbekistan sayfası: ikat bandı, suzani deseni, Taşkent/Semerkant/Buhara siluetleri, Özbekistan hedefleri, 5 haber'],
  ['v101','25.11.2026','Web sitesi (dünya, kıta, ülke, müşavirlik sayfası) kompakt: bölümler açılır-kapanır kutu (ilk bölüm açık, diğerleri sayaçlı özet), yarı saydam buzlu cam kartlar ve üst bar, büyük ikon rozetleri'],
