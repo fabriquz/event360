@@ -2846,6 +2846,9 @@ details:not([open])>summary>i{transform:rotate(-90deg)}
 .uz-hc em{display:block;font-style:normal;font-size:.66rem;color:var(--wm);margin-top:2px}
 .uz-bar{height:6px;border-radius:6px;background:#e3edf6;margin-top:5px;overflow:hidden}.uz-bar u{display:block;text-decoration:none;height:100%;background:linear-gradient(90deg,var(--uz2),var(--uz3))}
 @media(max-width:900px){.uz-hd{grid-template-columns:1fr 1fr}}
+
+/* v104 · dünya haritası büyük */
+@media(min-width:901px){.gw-hg{grid-template-columns:minmax(360px,.34fr) minmax(0,1.66fr)!important;gap:8px!important}.gw-svg{max-height:none!important;transform:scale(1.06);transform-origin:50% 40%}.gw-ht h1{font-size:1.5rem!important}.g3-y{min-width:0}.g3-y>div{padding:4px 8px}.g3-y b{font-size:1rem}.gw-pin text{font-size:11px!important}.ws .gw-hero{padding-bottom:0!important}.gw-lg{font-size:.74rem}}
 </style>
 
 <div class="app">
@@ -3974,9 +3977,10 @@ Object.assign(A,{
  'rp-schadd':()=>{S.rpSch.push({n:RTPL[S.rp.t][0],f:'Her ayın 1\'i, 09:00',to:RTPL[S.rp.t][3],on:true});toast('Rapor her ay otomatik gönderilecek');draw();}
 });
 
-const VER='v103',VERD='26.11.2026';
+const VER='v104',VERD='26.11.2026';
 const CHANGES=[
  ['v102','25.11.2026','Demo hazırlığı: sol menüde numaralar ve ✓/! durum işaretleri kaldırıldı (menüde yalnız ikon, ad ve sayaç; numaralar yalnız Etkinlik akışında), her bölüme kendi ikonu, Etki bölümü Etki ve takip adını aldı, tüm ekranlar taşma ve yazım için tarandı'],
+ ['v104','26.11.2026','Dünya girişindeki harita büyütüldü: harita sütunu genişletildi, yükseklik sınırı kaldırıldı, etiketler büyütüldü'],
  ['v103','26.11.2026','Web sitesi girişi sade: kıta → bölge → ülke açılır kutular, yıllık ihracat hedefi şeridi (2025 gerçekleşen, 2026-2028 örnek hedef), Yaklaşan etkinlikler ve Bakanlıktan haberler (5+5) açık gelir; Özbekistan sayfası: ikat bandı, suzani deseni, Taşkent/Semerkant/Buhara siluetleri, Özbekistan hedefleri, 5 haber'],
  ['v101','25.11.2026','Web sitesi (dünya, kıta, ülke, müşavirlik sayfası) kompakt: bölümler açılır-kapanır kutu (ilk bölüm açık, diğerleri sayaçlı özet), yarı saydam buzlu cam kartlar ve üst bar, büyük ikon rozetleri'],
  ['v99','25.11.2026','Ana sayfa kompakt ve cam görünümlü: Etkinlik akışı ve diğer kutular kapalı/özet geliyor, 10 adım ince tek satır kutu, adımlar tek tek açılır, sayaçlar küçük, yarı saydam buzlu cam kartlar'],
@@ -6260,7 +6264,7 @@ var UZEV=(()=>{
   ${CC.slice().sort((p,q)=>p[4]-q[4]).map(x=>{const [a,b]=gxy(GWP[x[0]]);return `<g class="gw-pin ${x[4]?'on':'c'} ${GWL[x[0]]?'lb':''}" data-act="ws-c" data-v="${x[0]}" tabindex="0" role="button" aria-label="${x[1]}"><title>${x[2]} Ticaret Müşavirliği · ${x[4]?'yayında':'yakında'}</title>${x[4]?`<circle class="gw-pulse" cx="${a}" cy="${b}" r="10"/>`:''}<circle class="gw-hit" cx="${a}" cy="${b}" r="8"/><circle cx="${a}" cy="${b}" r="${x[4]?6:4.2}"/><text x="${a}" y="${b-10}">${x[1]}</text></g>`;}).join('')}</svg>`;};
  const TYI={heyet:'heyet',fuar:'fuar',alim:'alici',web:'online'};
  const tIc=t=>`<span class="gx-ti" style="--tc:${TY[t][2]}">${ic(TYI[t]||'cal')}</span>`;
-const G3Y=[['2025','273,4','gerçekleşen','on'],['2026','282,0*','örnek hedef',''],['2027','300,0*','örnek hedef',''],['2028','320,0*','örnek hedef','']];
+const G3Y=[['2025','273,4','gerçekleşen','on'],['2026','282,0*','hedef',''],['2027','300,0*','hedef',''],['2028','320,0*','hedef','']];
 const pgWorld=()=>{const live=CC.filter(x=>x[4]).length,nxt=k=>WEV.filter(e=>e.cc===k).slice().sort(ord)[0],K=S.wxK,B=S.wxB,LL=wxList();
   const up=WEV.slice().sort(ord).slice(0,5);
   return `
