@@ -2926,6 +2926,28 @@ details:not([open])>summary>i{transform:rotate(-90deg)}
 .ws .gx-sec{padding-top:6px!important;padding-bottom:2px}
 .ws .gc-rs{padding:6px 10px}
 @media(min-width:1000px){.ws .ws-sec:has(>.ws-mon){grid-template-columns:repeat(4,minmax(0,1fr))}.ws .ws-sec:has(>.ws-mon) .ws-evb h3{font-size:.8rem}}
+
+/* v105e · etkinlik kartı düzeni */
+.ws .ws-ev .ws-evb{display:flex!important;flex-wrap:wrap;align-items:center;gap:2px 6px}
+.ws .ws-ev .ws-evb .ws-cn{white-space:nowrap;font-weight:700;color:var(--wn)}
+.ws .ws-ev .ws-evb h3{flex:0 0 100%;order:2;margin:2px 0!important}
+.ws .ws-ev .ws-evb p{order:3;flex:1 1 auto;min-width:0}
+.ws .ws-ev .ws-evb .ws-st{order:4;margin-left:auto;white-space:nowrap}
+.ws .ws-ev .ws-evb .ws-tag{order:1;margin-left:auto}
+
+/* v105f · etkinlik listesi: tek satırlık sık tablo */
+.ws .ws-sec:has(>.ws-mon){grid-template-columns:1fr!important;gap:3px!important}
+.ws .ws-sec:has(>.ws-mon) .ws-ev{padding:3px 10px!important;gap:10px!important;border-radius:9px!important;align-items:center!important}
+.ws .ws-sec:has(>.ws-mon) .ws-dt{width:62px;flex-direction:row;gap:4px;align-items:baseline;justify-content:center;padding:3px 0;border-radius:7px;align-self:center}
+.ws .ws-sec:has(>.ws-mon) .ws-dt b{font-size:.95rem}.ws .ws-sec:has(>.ws-mon) .ws-dt span{font-size:.62rem}
+.ws .ws-sec:has(>.ws-mon) .ws-ev .ws-evb{flex:1;flex-wrap:nowrap!important;gap:10px!important;min-width:0}
+.ws .ws-sec:has(>.ws-mon) .ws-ev .ws-evb .ws-cn{order:1;flex:0 0 150px;overflow:hidden;text-overflow:ellipsis}
+.ws .ws-sec:has(>.ws-mon) .ws-ev .ws-evb h3{order:2;flex:1 1 auto!important;min-width:0;margin:0!important;font-size:.86rem!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ws .ws-sec:has(>.ws-mon) .ws-ev .ws-evb p{order:3;flex:0 0 230px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.ws .ws-sec:has(>.ws-mon) .ws-ev .ws-evb .ws-tag{order:4;margin:0;flex:none;width:96px;text-align:center}
+.ws .ws-sec:has(>.ws-mon) .ws-ev .ws-evb .ws-st{order:5;margin:0;flex:0 0 130px;text-align:center}
+.ws .ws-sec:has(>.ws-mon) .ws-ev:hover{transform:none}
+@media(max-width:900px){.ws .ws-sec:has(>.ws-mon) .ws-ev .ws-evb{flex-wrap:wrap!important}.ws .ws-sec:has(>.ws-mon) .ws-ev .ws-evb h3{flex:0 0 100%!important;white-space:normal}.ws .ws-sec:has(>.ws-mon) .ws-ev .ws-evb p,.ws .ws-sec:has(>.ws-mon) .ws-ev .ws-evb .ws-cn{flex:1 1 auto!important}}
 </style>
 
 <div class="app">
